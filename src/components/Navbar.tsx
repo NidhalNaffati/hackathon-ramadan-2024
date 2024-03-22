@@ -2,8 +2,8 @@ import {Link} from "react-router-dom";
 
 export function Navbar() {
 	return (
-		<nav className="bg-gray-800 py-4">
-			<ul className="flex">
+		<nav className=" flex bg-gray-800 py-4 w-full">
+			<ul className="flex w-full items-center justify-center">
 				<li className="mr-4">
 					<Link to="/" className="text-white hover:text-gray-300">
 						Home
@@ -23,3 +23,4 @@ export function Navbar() {
 		</nav>
 	);
 }
+
