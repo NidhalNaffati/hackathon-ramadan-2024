@@ -85,26 +85,6 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full py-12 md:py-16 xl:py-24">
-				<div className="flex flex-col items-center gap-4 px-4 md:px-6">
-					<div className="space-y-2 text-center">
-						<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-							Download the App
-						</h2>
-						<p className="max-w-[600px] text-gray-500/relaxed dark:text-gray-400">
-							Help your child become a better reader. Download the app today!
-						</p>
-					</div>
-					<form className="flex flex-col gap-4 min-[400px]:flex-row max-w-sm w-full">
-						<input
-							className="bg-white dark:bg-gray-950"
-							placeholder="Enter your email"
-							type="text"
-						/>
-						<button type="submit">Download</button>
-					</form>
-				</div>
-			</section>
 		</div>
 	);
 }
