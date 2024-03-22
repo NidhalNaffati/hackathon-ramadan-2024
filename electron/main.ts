@@ -18,7 +18,7 @@ function createWindow() {
     width: 900,
     height: 900,
     alwaysOnTop: true, // true at the moment for testing
-    title: "smart-teleprompter",
+    title: "hackathon-ramadan-2024",
     icon: path.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
