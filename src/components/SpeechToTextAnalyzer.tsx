@@ -80,7 +80,7 @@ function SpeechToTextAnalyzer() {
 
 	function goToNextParagraph() {
 		// Check if all paragraphs have been read
-		if (currentParagraphIndex === referenceParagraphs.length - 2) {
+		if (currentParagraphIndex === referenceParagraphs.length - 1) {
 			console.log("All paragraphs have been read.");
 			// Trigger alert when all text has been read
 			toast.success(
