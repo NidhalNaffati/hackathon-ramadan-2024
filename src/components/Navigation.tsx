@@ -17,11 +17,26 @@ const Navigation: React.FC<NavigationProps> = ({
 }) => {
 	return (
 		<div>
-			<button onClick={reset}>Reset</button>
-			<button onClick={goToPreviousParagraph} disabled={isPreviousDisabled}>
+			<button
+				className="bg-gray-500 font-sans text-base px-5 py-2 rounded-md cursor-pointer"
+				onClick={goToPreviousParagraph}
+				disabled={isPreviousDisabled}
+			>
 				⬅️
 			</button>
-			<button onClick={goToNextParagraph} disabled={isNextDisabled}>
+
+			<button
+				className="bg-gray-500 font-sans text-base px-5 py-2 rounded-md cursor-pointer mx-2"
+				onClick={reset}
+			>
+				Reset
+			</button>
+
+			<button
+				className=" bg-gray-500 font-sans text-base px-5 py-2 rounded-md cursor-pointer"
+				onClick={goToNextParagraph}
+				disabled={isNextDisabled}
+			>
 				➡️
 			</button>
 		</div>

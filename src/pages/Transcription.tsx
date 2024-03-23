@@ -3,13 +3,13 @@ import SpeechToTextAnalyzer from "../components/SpeechToTextAnalyzer.tsx";
 
 export default function Transcription() {
 	return (
-		<>
-			<div className="vosk-control">
+		<div className="items-center justify-center min-h-screen">
+			<div className="mb-8 mx-auto">
 				<VoskControl />
 			</div>
-			<div>
+			<div className="mx-auto">
 				<SpeechToTextAnalyzer />
 			</div>
-		</>
+		</div>
 	);
 }
