@@ -6,9 +6,7 @@ function App() {
 	return (
 		<>
 			<BrowserRouter>
-				<div className="flex items-center justify-center">
-					<Navbar />
-				</div>
+				<Navbar />
 				<AppRoutes />
 			</BrowserRouter>
 		</>
