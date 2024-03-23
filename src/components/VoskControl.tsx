@@ -10,10 +10,6 @@ function VoskControl() {
 
 	useEffect(() => {
 		ipcRenderer.on("vosk-status", (_event, started) => {
-			console.log(
-				"Received vosk-status event: ",
-				started ? "started" : "stopped",
-			);
 			setIsRunning(started);
 			setIsLoading(false); // Stop loading when status is received
 		});
@@ -33,11 +29,17 @@ function VoskControl() {
 	}
 
 	return (
-		<div>
+		<div className="flex items-center justify-center m-3">
 			<button
 				onClick={isRunning ? stopVosk : startVosk}
 				disabled={isLoading}
-				className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+				className={`${
+					isLoading
+						? "bg-gray-300 cursor-not-allowed"
+						: isRunning
+							? "bg-red-500"
+							: "bg-green-500"
+				} hover:bg-opacity-80 text-white font-semibold py-2 px-4 border rounded mx-4`}
 			>
 				{isLoading ? "Loading..." : isRunning ? "Stop Vosk" : "Start Vosk"}
 			</button>
