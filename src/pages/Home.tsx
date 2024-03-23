@@ -79,7 +79,7 @@ export default function Home() {
 							</div>
 							<div className="flex items-center gap-4">
 								<div className="w-4 h-4 rounded-full bg-gray-900" />
-								<p className="py-2.5">Support a lot of laungue</p>
+								<p className="py-2.5">Support a lot of language</p>
 							</div>
 						</div>
 					</div>
