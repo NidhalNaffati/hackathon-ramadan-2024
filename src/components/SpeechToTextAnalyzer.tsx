@@ -16,9 +16,7 @@ function SpeechToTextAnalyzer() {
 	const [currentParagraphIndex, setCurrentParagraphIndex] = useState<number>(0);
 
 	const referenceText: string =
-		"باسم الله والصلاة والسلام على رسول الله. السلام عليكم أعضاء لجنة التحكيم، يسعدنا تقديم نموذج تطبيق تقديري يهدف فريقنا إلى تقديمه \n" +
-		"هدف التطبيق الرئيسي هو مراقبة قراءة الطفل وتحديد الكلمات التي يلفظها ومقارنتها مع النص المقدم أمامه \n" +
-		"يعتمد التطبيق على الذكاء الاصطناعي لتحديد الأخطاء، كما يتضمن خاصية تتبع الفقرات، حيث ينتقل تلقائيًا إلى الفقرة التالية بعد انتهاء قراءة فقرة محددة ";
+		"مرحبًا بالجميع، اليوم أنا متحمس لتقديم النسخة التجريبية من تطبيقي، كما ترون يعمل كمنظم نصوص ذكي. عند قراءة النص، يقوم التطبيق بتحويل كلامي إلى نص ثم يقارنه بالنص المكتوب. كما يتميز التطبيق بالتنقل التلقائي، مما يعني أنه عند انتهائي من قراءة فقرة يتحرك تلقائيًا إلى الفقرة التالية. صممت هذا التطبيق لمنشئي المحتوى للتخلص من الحاجة إلى حفظ النصوص وتوفير بديل ميسور التكلفة للمنظمات التلفزيونية التقليدية. بالإضافة إلى ذلك، فإنه مفيد للطلاب مثلي الذين يحاولون تحسين نطقهم";
 
 	const referenceParagraphs: string[] = referenceText.split("\n");
 
@@ -105,15 +103,13 @@ function SpeechToTextAnalyzer() {
 	return (
 		<>
 			<div>
-				<div className={`flex items-center justify-center m-6`}>
-					<Navigation
-						goToPreviousParagraph={goToPreviousParagraph}
-						goToNextParagraph={goToNextParagraph}
-						reset={handleResetClick}
-						isPreviousDisabled={isPreviousDisabled}
-						isNextDisabled={isNextDisabled}
-					/>
-				</div>
+				<Navigation
+					goToPreviousParagraph={goToPreviousParagraph}
+					goToNextParagraph={goToNextParagraph}
+					reset={handleResetClick}
+					isPreviousDisabled={isPreviousDisabled}
+					isNextDisabled={isNextDisabled}
+				/>
 				<h2>
 					<ScriptComparison
 						recognizedText={recognizedText}
