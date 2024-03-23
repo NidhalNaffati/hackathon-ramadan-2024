@@ -6,6 +6,8 @@ import {
 } from "../utils/speech-analyzer-utils";
 import ScriptComparison from "./ScriptComparison.tsx";
 import Navigation from "./Navigation.tsx";
+import {toast, ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ipcRenderer: IpcRenderer = window.ipcRenderer;
 
@@ -77,6 +79,24 @@ function SpeechToTextAnalyzer() {
 	}
 
 	function goToNextParagraph() {
+		// Check if all paragraphs have been read
+		if (currentParagraphIndex === referenceParagraphs.length - 2) {
+			console.log("All paragraphs have been read.");
+			// Trigger alert when all text has been read
+			toast.success(
+				"Congratulations! You have finished reading all the text.",
+				{
+					position: "top-center",
+					autoClose: 5000, // Close the alert after 5 seconds
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+				},
+			);
+		}
+
 		if (currentParagraphIndex < referenceParagraphs.length - 1) {
 			setCurrentParagraphIndex(currentParagraphIndex + 1);
 			resetTextStateVariables(
@@ -105,6 +125,7 @@ function SpeechToTextAnalyzer() {
 	return (
 		<>
 			<div>
+				<ToastContainer />
 				<div className={`flex items-center justify-center m-6`}>
 					<Navigation
 						goToPreviousParagraph={goToPreviousParagraph}
