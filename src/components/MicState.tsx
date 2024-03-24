@@ -1,11 +1,12 @@
 import {useEffect, useState} from "react";
 import {IpcRenderer} from "electron";
+import {useTranslation} from "react-i18next";
 
 const ipcRenderer = (window as any).ipcRenderer as IpcRenderer;
 
 function MicState() {
 	const [isRunning, setIsRunning] = useState<boolean>(false);
-
+	const {t} = useTranslation();
 	useEffect(() => {
 		// listener lel event "vosk-status"
 		ipcRenderer.on("vosk-status", (_event, started) => {
@@ -24,7 +25,7 @@ function MicState() {
 			}`}
 			disabled
 		>
-			<span className="mr-2">🎤 |</span> {isRunning ? "ON" : "OFF"}
+			<span className="mr-2">🎤 |</span> {isRunning ? t("ON") : t("OFF")}
 		</button>
 	);
 }

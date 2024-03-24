@@ -1,13 +1,14 @@
 import {useState, useEffect} from "react";
 import {IpcRenderer} from "electron";
 import MicState from "./MicState.tsx";
+import {useTranslation} from "react-i18next";
 
 const ipcRenderer = (window as any).ipcRenderer as IpcRenderer;
 
 function VoskControl() {
 	const [isRunning, setIsRunning] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
-
+	const {t} = useTranslation();
 	useEffect(() => {
 		ipcRenderer.on("vosk-status", (_event, started) => {
 			setIsRunning(started);
@@ -41,7 +42,11 @@ function VoskControl() {
 							: "bg-green-500"
 				} hover:bg-opacity-80 text-white font-semibold py-2 px-4 border rounded mx-4`}
 			>
-				{isLoading ? "Loading..." : isRunning ? "Stop Vosk" : "Start Vosk"}
+				{isLoading
+					? t("Loading...")
+					: isRunning
+						? t("Stop Vosk")
+						: t("Start Vosk")}
 			</button>
 			<MicState />
 		</div>

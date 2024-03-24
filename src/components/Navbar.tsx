@@ -27,6 +27,11 @@ export function Navbar() {
 						{t("navigation:transcription")}
 					</Link>
 				</li>
+				<li className="mr-4">
+					<Link to={"/tracking"} className="text-white hover:text-gray-300">
+						{t("Progress tracking")}
+					</Link>
+				</li>
 			</ul>
 		</nav>
 	);

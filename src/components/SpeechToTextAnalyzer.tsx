@@ -8,6 +8,7 @@ import ScriptComparison from "./ScriptComparison.tsx";
 import Navigation from "./Navigation.tsx";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {useTranslation} from "react-i18next";
 
 const ipcRenderer: IpcRenderer = window.ipcRenderer;
 
@@ -16,7 +17,7 @@ function SpeechToTextAnalyzer() {
 	const [lastRecognizedText, setLastRecognizedText] = useState<string>("");
 	const [startingWord, setStartingWord] = useState<string>("");
 	const [currentParagraphIndex, setCurrentParagraphIndex] = useState<number>(0);
-
+	const {i18n} = useTranslation();
 	const referenceText: string =
 		"باسم الله والصلاة والسلام على رسول الله. السلام عليكم أعضاء لجنة التحكيم، يسعدنا تقديم نموذج تطبيق تقديري يهدف فريقنا إلى تقديمه \n" +
 		"هدف التطبيق الرئيسي هو مراقبة قراءة الطفل وتحديد الكلمات التي يلفظها ومقارنتها مع النص المقدم أمامه \n" +
@@ -135,7 +136,7 @@ function SpeechToTextAnalyzer() {
 						isNextDisabled={isNextDisabled}
 					/>
 				</div>
-				<h2>
+				<h2 className={i18n.resolvedLanguage == "ar" ? "direction p-2" : "p-2"}>
 					<ScriptComparison
 						recognizedText={recognizedText}
 						currentParagraphIndex={currentParagraphIndex}

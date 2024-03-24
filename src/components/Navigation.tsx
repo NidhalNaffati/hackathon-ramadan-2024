@@ -1,4 +1,5 @@
 import React from "react";
+import {useTranslation} from "react-i18next";
 
 interface NavigationProps {
 	goToPreviousParagraph: () => void;
@@ -15,6 +16,7 @@ const Navigation: React.FC<NavigationProps> = ({
 	isPreviousDisabled,
 	isNextDisabled,
 }) => {
+	const {t} = useTranslation();
 	return (
 		<div>
 			<button
@@ -29,7 +31,7 @@ const Navigation: React.FC<NavigationProps> = ({
 				className="bg-gray-500 font-sans text-base px-5 py-2 rounded-md cursor-pointer mx-2"
 				onClick={reset}
 			>
-				Reset
+				{t("reset")}
 			</button>
 
 			<button
