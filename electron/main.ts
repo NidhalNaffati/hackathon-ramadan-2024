@@ -1,10 +1,7 @@
-import { app, BrowserWindow, ipcMain } from "electron";
+import {app, BrowserWindow, ipcMain} from "electron";
 import path from "node:path";
 import childProcess from "child_process";
-import {
-	startVoskProcess,
-	stopVoskProcess,
-} from "../src/utils/vosk-process.ts";
+import {startVoskProcess, stopVoskProcess} from "../src/utils/vosk-process.ts";
 
 process.env.DIST = path.join(__dirname, "../dist");
 process.env.VITE_PUBLIC = app.isPackaged

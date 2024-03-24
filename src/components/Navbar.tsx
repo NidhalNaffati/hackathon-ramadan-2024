@@ -1,22 +1,30 @@
+import {useTranslation} from "react-i18next";
 import {Link} from "react-router-dom";
 
 export function Navbar() {
+	const {t, i18n} = useTranslation();
 	return (
 		<nav className=" flex bg-gray-800 py-4 w-full">
-			<ul className="flex w-full items-center justify-center">
+			<ul
+				className={
+					i18n.resolvedLanguage == "en"
+						? "flex w-full items-center justify-center"
+						: "flex w-full items-center justify-center direction"
+				}
+			>
 				<li className="mr-4">
 					<Link to="/" className="text-white hover:text-gray-300">
-						Home
+						{t("navigation:home")}
 					</Link>
 				</li>
 				<li className="mr-4">
 					<Link to="/settings" className="text-white hover:text-gray-300">
-						Settings
+						{t("navigation:settings")}
 					</Link>
 				</li>
 				<li className="mr-4">
 					<Link to="/transcription" className="text-white hover:text-gray-300">
-						Transcription
+						{t("navigation:transcription")}
 					</Link>
 				</li>
 			</ul>
