@@ -1,4 +1,5 @@
 import {useTranslation} from "react-i18next";
+import SettingComponent from "../components/SettingComponent.tsx";
 
 export default function Settings() {
 	const {t, i18n} = useTranslation();
@@ -11,6 +12,12 @@ export default function Settings() {
 		ar: {nativeName: "Ar"},
 	};
 	return (
+
+		<div>
+
+			<SettingComponent />
+
+
 		<div className="w-[400px] border rounded-md border-white mx-auto m-[1rem] p-[15px]">
 			<ul>
 				<li
@@ -43,6 +50,8 @@ export default function Settings() {
 					) */}
 				</li>
 			</ul>
+		</div>
+
 		</div>
 	);
 }
