@@ -1,11 +1,21 @@
+import {useTranslation} from "react-i18next";
 import SettingComponent from "../components/SettingComponent.tsx";
 
 export default function Settings() {
-return (
+	const {t, i18n} = useTranslation();
+	interface Language {
+		nativeName: string;
+	}
+
+	const lngs: {[key: string]: Language} = {
+		en: {nativeName: "En"},
+		ar: {nativeName: "Ar"},
+	};
+	return (
 		<div>
 			<SettingComponent />
 
-			{/* <div className="w-[400px] border rounded-md border-white mx-auto m-[1rem] p-[15px]">
+			<div className="w-[400px] border rounded-md border-white mx-auto m-[1rem] p-[15px]">
 				<ul>
 					<li
 						className={
@@ -34,10 +44,10 @@ return (
 						))}
 						{/* i18n.resolvedLanguage == "ar" && (
 						<span className={"text-white direction"}>{t("language")}</span>
-					) }
+					) */}
 					</li>
 				</ul>
-				</div> */}
+			</div>
 		</div>
 	);
 }
