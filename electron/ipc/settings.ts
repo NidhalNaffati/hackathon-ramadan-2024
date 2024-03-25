@@ -1,6 +1,7 @@
 import { ipcMain } from "electron";
 import path from "node:path";
 import * as fs from "fs";
+import IpcMainEvent = Electron.IpcMainEvent;
 
 const settingsFilePath = path.join(__dirname, "..", "src", "config", "settings.json");
 
@@ -15,9 +16,8 @@ export function initializeSettingsIPC() {
 		return loadSettings();
 	});
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-	ipcMain.on("save-settings", (event: IpcMainEvent, settings: object) => {
+
+	ipcMain.on("save-settings", (_event: IpcMainEvent, settings: object) => {
 		saveSettings(settings);
 	});
 
