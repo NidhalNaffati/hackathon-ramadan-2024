@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { IpcRenderer } from "electron";
+import React, {useState, useEffect} from "react";
+import {IpcRenderer} from "electron";
 
 const ipcRenderer: IpcRenderer = window.ipcRenderer;
 
@@ -19,7 +19,7 @@ const SettingComponent: React.FC = () => {
 	useEffect(() => {
 		const fetchSettings = async () => {
 			try {
-				const response = await ipcRenderer.invoke("get-settings") as Settings;
+				const response = (await ipcRenderer.invoke("get-settings")) as Settings;
 				setSettings(response);
 			} catch (error) {
 				console.error("Error fetching settings:", error);
@@ -51,7 +51,9 @@ const SettingComponent: React.FC = () => {
 
 	const handleRestoreDefaults = async () => {
 		try {
-			const defaultSettings = await ipcRenderer.invoke("get-default-settings") as Settings;
+			const defaultSettings = (await ipcRenderer.invoke(
+				"get-default-settings",
+			)) as Settings;
 			setSettings(defaultSettings);
 			ipcRenderer.send("save-settings", defaultSettings);
 			console.log("Settings restored to defaults successfully!");
@@ -76,7 +78,9 @@ const SettingComponent: React.FC = () => {
 					<option value="light">Light</option>
 				</select>
 				<br />
-				<label htmlFor="wordSimilarityPercentage">Word Similarity Percentage:</label>
+				<label htmlFor="wordSimilarityPercentage">
+					Word Similarity Percentage:
+				</label>
 				<input
 					type="number"
 					id="wordSimilarityPercentage"
@@ -88,12 +92,20 @@ const SettingComponent: React.FC = () => {
 				<br />
 			</form>
 			<button
-				className={"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"}
-				onClick={handleSaveSettings}>Save Settings
+				className={
+					"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+				}
+				onClick={handleSaveSettings}
+			>
+				Save Settings
 			</button>
 			<button
-				className={"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"}
-				onClick={handleRestoreDefaults}>Restore Defaults
+				className={
+					"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+				}
+				onClick={handleRestoreDefaults}
+			>
+				Restore Defaults
 			</button>
 		</div>
 	);
