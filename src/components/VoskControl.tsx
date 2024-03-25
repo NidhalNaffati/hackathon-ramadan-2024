@@ -3,7 +3,7 @@ import {IpcRenderer} from "electron";
 import MicState from "./MicState.tsx";
 import {useTranslation} from "react-i18next";
 
-const ipcRenderer = (window as any).ipcRenderer as IpcRenderer;
+const ipcRenderer: IpcRenderer = window.ipcRenderer;
 
 function VoskControl() {
 	const [isRunning, setIsRunning] = useState(false);

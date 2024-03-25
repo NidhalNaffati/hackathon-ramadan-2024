@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {IpcRenderer} from "electron";
 import {useTranslation} from "react-i18next";
 
-const ipcRenderer = (window as any).ipcRenderer as IpcRenderer;
+const ipcRenderer: IpcRenderer = window.ipcRenderer;
 
 function MicState() {
 	const [isRunning, setIsRunning] = useState<boolean>(false);
