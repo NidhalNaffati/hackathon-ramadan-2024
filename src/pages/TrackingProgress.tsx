@@ -1,3 +1,5 @@
+import TaskElement from "../components/TaskElement";
+
 export default function TrackingProgress() {
 	// Get current date
 	const today = new Date();
@@ -13,22 +15,18 @@ export default function TrackingProgress() {
 
 	// Concatenate day, month, and year with "/"
 	const formattedDate = day + "/" + month + "/" + year;
-
 	return (
-		<div className="container p-6">
-			<h1>Today {formattedDate}</h1>
-			<h3>Total time exercie today is 2m:32s</h3>
-			<ul>
-				<li>
-					<p>
-						{today.getHours()}:{today.getMinutes()}:{today.getSeconds()}
-					</p>
-					<p>Title:The Adventures of Tom Sawyer</p>
-					<p>Language:English</p>
-					<p>25 word par minute</p>
-					<p>Duration: 2m:32s</p>
-					<p>Comprehension : 60% accuracy</p>
-				</li>
+		<div className="p-6">
+			<h1 className="font-bold text-[1.25rem] mb-[1rem]">Today {formattedDate}</h1>
+			<ul className="flex flex-col items-center">
+				<TaskElement
+					title="the appended world"
+					language="english"
+					duration={{minutes: 12, seconds: 10}}
+					numberWords={320}
+					comprehension={60}
+					wordParMinute={15}
+				/>
 			</ul>
 		</div>
 	);

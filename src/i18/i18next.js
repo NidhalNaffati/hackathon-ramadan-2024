@@ -39,8 +39,7 @@ i18next
 					"Start Vosk": "تشغيل البرنامج",
 					Theme: "الوضع",
 					Dark: "مظلم",
-					Light: "ضوء",
-					"Word Similarity Percentage": "نسبة تشابه الكلمات",
+					light: "مضيئ",
 				},
 				navigation: {
 					home: "الصفحة الرئيسية",
@@ -77,7 +76,7 @@ i18next
 					"Start Vosk": "Start Vosk",
 					Theme: "Theme",
 					Dark: "Dark",
-					light: "light",
+					light: "Light",
 					"Word Similarity Percentage": "Word Similarity Percentage",
 				},
 				navigation: {
