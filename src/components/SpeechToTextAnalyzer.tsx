@@ -9,6 +9,7 @@ import Navigation from "./Navigation.tsx";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {useTranslation} from "react-i18next";
+import TextAiGenerator from "./TextAiGenerator.tsx";
 
 const ipcRenderer: IpcRenderer = window.ipcRenderer;
 
