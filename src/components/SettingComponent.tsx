@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {useTranslation} from "react-i18next";
 import {IpcRenderer} from "electron";
 
 const ipcRenderer: IpcRenderer = window.ipcRenderer;
@@ -11,16 +12,23 @@ interface Settings {
 
 const SettingComponent: React.FC = () => {
 	const [settings, setSettings] = useState<Settings>({
-		language: "arabic",
-		theme: "dark",
-		wordSimilarityPercentage: "85",
+		language: "",
+		theme: "",
+		wordSimilarityPercentage: "",
 	});
+	const {t, i18n} = useTranslation();
 
 	useEffect(() => {
 		const fetchSettings = async () => {
 			try {
 				const response = (await ipcRenderer.invoke("get-settings")) as Settings;
 				setSettings(response);
+
+				// set the app language
+				i18n.changeLanguage(response.language).then(
+					() => console.log("Language changed successfully!"),
+					(error) => console.error("Error changing language:", error),
+				);
 			} catch (error) {
 				console.error("Error fetching settings:", error);
 			}
@@ -30,7 +38,7 @@ const SettingComponent: React.FC = () => {
 			() => console.log("Settings fetched successfully!"),
 			(error) => console.error("Error fetching settings:", error),
 		);
-	}, []);
+	}, [i18n]);
 
 	const handleChange = (event: React.FormEvent<HTMLFormElement>) => {
 		const target = event.target as HTMLInputElement | HTMLSelectElement;
@@ -38,6 +46,13 @@ const SettingComponent: React.FC = () => {
 			...settings,
 			[target.name]: target.value as string,
 		});
+	};
+
+	const handleLanguageChange = (language: string) => {
+		i18n.changeLanguage(language).then(
+			() => console.log("Language changed successfully!"),
+			(error) => console.error("Error changing language:", error),
+		);
 	};
 
 	const handleSaveSettings = async () => {
@@ -63,51 +78,60 @@ const SettingComponent: React.FC = () => {
 	};
 
 	return (
-		<div className="settings-container">
-			<h2>Settings</h2>
-			<form onChange={handleChange}>
-				<label htmlFor="language">Language:</label>
-				<select id="language" name="language" value={settings.language}>
-					<option value="arabic">Arabic</option>
-					<option value="english">English</option>
-				</select>
-				<br />
-				<label htmlFor="theme">Theme:</label>
-				<select id="theme" name="theme" value={settings.theme}>
-					<option value="dark">Dark</option>
-					<option value="light">Light</option>
-				</select>
-				<br />
-				<label htmlFor="wordSimilarityPercentage">
-					Word Similarity Percentage:
-				</label>
-				<input
-					type="number"
-					id="wordSimilarityPercentage"
-					name="wordSimilarityPercentage"
-					min="0"
-					max="100"
-					value={settings.wordSimilarityPercentage}
-				/>
-				<br />
-			</form>
-			<button
-				className={
-					"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
-				}
-				onClick={handleSaveSettings}
-			>
-				Save Settings
-			</button>
-			<button
-				className={
-					"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
-				}
-				onClick={handleRestoreDefaults}
-			>
-				Restore Defaults
-			</button>
-		</div>
+		<>
+			<div className=" w-[400px] border rounded-md border-white mx-auto m-[1rem] p-[15px]">
+				<h2>Settings</h2>
+				<form onChange={handleChange}>
+					<label htmlFor="language">Language:</label>
+					<select
+						id="language"
+						name="language"
+						onChange={(e) => handleLanguageChange(e.target.value)}
+						value={settings.language}
+					>
+						<option value="ar">{t("Arabic")}</option>
+						<option value="en">{t("English")}</option>
+					</select>
+					<br />
+					<label htmlFor="theme">Theme:</label>
+					<select id="theme" name="theme" value={settings.theme}>
+						<option value="dark">Dark</option>
+						<option value="light">Light</option>
+					</select>
+					<br />
+					<label htmlFor="wordSimilarityPercentage">
+						Word Similarity Percentage:
+					</label>
+					<input
+						type="number"
+						id="wordSimilarityPercentage"
+						name="wordSimilarityPercentage"
+						min="0"
+						max="100"
+						value={settings.wordSimilarityPercentage}
+					/>
+					<br />
+				</form>
+			</div>
+			<div className="flex items-center justify-center">
+				<button
+					className={
+						"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+					}
+					onClick={handleSaveSettings}
+				>
+					Save Settings
+				</button>
+				<button
+					className={
+						"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+					}
+					onClick={handleRestoreDefaults}
+				>
+					Restore Defaults
+				</button>
+			</div>
+		</>
 	);
 };
 

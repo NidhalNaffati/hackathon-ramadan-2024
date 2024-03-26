@@ -6,7 +6,7 @@ import IpcMainEvent = Electron.IpcMainEvent;
 const settingsFilePath = path.join(__dirname, "..", "src", "config", "settings.json");
 
 const defaultSettings = {
-	"language": "arabic",
+	"language": "en",
 	"theme": "light",
 	"wordSimilarityPercentage": "80",
 };
