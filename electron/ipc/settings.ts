@@ -6,7 +6,7 @@ import IpcMainEvent = Electron.IpcMainEvent;
 const settingsFilePath = path.join(__dirname, "..", "src", "config", "settings.json");
 
 const defaultSettings = {
-	"language": "en",
+	"language": "ar",
 	"theme": "light",
 	"wordSimilarityPercentage": "80",
 };
@@ -29,7 +29,6 @@ export function initializeSettingsIPC() {
 
 function loadSettings() {
 	try {
-
 		// Check if the settings file exists
 		if (!fs.existsSync(settingsFilePath)) {
 			// If it doesn't exist, create it with default settings
