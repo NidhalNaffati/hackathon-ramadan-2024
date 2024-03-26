@@ -77,11 +77,12 @@ i18next
 					"Start Vosk": "Start Vosk",
 					Theme: "Theme",
 					Dark: "Dark",
+					light: "light",
 					"Word Similarity Percentage": "Word Similarity Percentage",
 				},
 				navigation: {
 					home: "Home",
-					settings: "settings",
+					settings: "Settings",
 					transcription: "Transcription",
 				},
 			},
