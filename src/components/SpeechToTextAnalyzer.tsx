@@ -1,24 +1,49 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import ScriptComparison from "./ScriptComparison.tsx";
 import Navigation from "./Navigation.tsx";
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {useTranslation} from "react-i18next";
 import useTextAnalyzerHooks from "../hooks/useTextAnalyzerHooks.tsx";
+import VoskControl from "./VoskControl.tsx";
+import {useAppSelector} from "../store/hooks.ts";
 
 function SpeechToTextAnalyzer() {
-	const {i18n} = useTranslation();
-    
-	const referenceText: string =
-		"باسم الله والصلاة والسلام على رسول الله. السلام عليكم أعضاء لجنة التحكيم، يسعدنا تقديم نموذج تطبيق تقديري يهدف فريقنا إلى تقديمه \n" +
-		"هدف التطبيق الرئيسي هو مراقبة قراءة الطفل وتحديد الكلمات التي يلفظها ومقارنتها مع النص المقدم أمامه \n" +
-		"يعتمد التطبيق على الذكاء الاصطناعي لتحديد الأخطاء، كما يتضمن خاصية تتبع الفقرات، حيث ينتقل تلقائيًا إلى الفقرة التالية بعد انتهاء قراءة فقرة محددة ";
+	const message = useAppSelector((state) => state.text.message);
 
-	const referenceParagraphs: string[] = referenceText.split("\n");
+	const {i18n} = useTranslation();
+	const [referenceText, setReferenceText] = useState<string>("");
 
 	const [isReferenceTextReady, setIsReferenceTextReady] =
 		useState<boolean>(false);
 
+	useEffect(() => {
+		async function fetchMessageFromServer(message: string) {
+			try {
+				const response = await fetch("http://localhost:3000/api/v1/messages", {
+					method: "POST", // or 'GET', 'PUT', etc.
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({message: message}), // Send userStory in the request body
+				});
+				if (response.ok) {
+					const data = await response.json();
+					setIsReferenceTextReady(true);
+					setReferenceText(data.content[0].text);
+					console.log("message uploaded");
+				}
+			} catch (error) {
+				console.error("Error:", error);
+			}
+		}
+		if (message != "") {
+			fetchMessageFromServer(message);
+		}
+	}, [message]);
+
+	const referenceParagraphs: string[] = referenceText.split("\n");
+	console.log(referenceParagraphs);
 	const {
 		recognizedText,
 		currentParagraphIndex,
@@ -26,7 +51,6 @@ function SpeechToTextAnalyzer() {
 		goToNextParagraph,
 		goToPreviousParagraph,
 	} = useTextAnalyzerHooks(referenceParagraphs);
-
 	const isNextDisabled =
 		currentParagraphIndex === referenceParagraphs.length - 1;
 	const isPreviousDisabled = currentParagraphIndex === 0;
