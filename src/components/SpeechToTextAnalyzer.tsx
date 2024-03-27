@@ -7,7 +7,7 @@ import useTextAnalyzerHooks from "../hooks/useTextAnalyzerHooks.tsx";
 
 function SpeechToTextAnalyzer() {
 	const {i18n} = useTranslation();
-
+    
 	const referenceText: string =
 		"باسم الله والصلاة والسلام على رسول الله. السلام عليكم أعضاء لجنة التحكيم، يسعدنا تقديم نموذج تطبيق تقديري يهدف فريقنا إلى تقديمه \n" +
 		"هدف التطبيق الرئيسي هو مراقبة قراءة الطفل وتحديد الكلمات التي يلفظها ومقارنتها مع النص المقدم أمامه \n" +
