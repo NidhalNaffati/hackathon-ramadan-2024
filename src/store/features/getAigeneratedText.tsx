@@ -1,7 +1,6 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 import type {PayloadAction} from "@reduxjs/toolkit";
 import type {RootState} from "../store";
-
 // Define a type for the slice state
 interface textAiState {
 	message: string;
@@ -11,21 +10,6 @@ interface textAiState {
 const initialState: textAiState = {
 	message: "",
 };
-
-export const fetchMessageFromServer = createAsyncThunk(
-	"textAi/fetchMessage",
-	async (message: string) => {
-		const response = await fetch("your-server-url", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({message}),
-		});
-		const data = await response.json();
-		return data;
-	},
-);
 
 export const TextAiGenerator = createSlice({
 	name: "textAi",
@@ -37,16 +21,7 @@ export const TextAiGenerator = createSlice({
 			state.message = action.payload;
 			console.log(action.payload);
 		},
-	},
-	extraReducers: (builder) => {
-		builder.addCase(fetchMessageFromServer.fulfilled, (state, action) => {
-			// Handle the successful fetch response here
-			console.log(action.payload);
-			// Modify state as needed based on the response
-            console.log(state);
-            
-		});
-	},
+	}
 });
 
 export const {getUserMessage} = TextAiGenerator.actions;

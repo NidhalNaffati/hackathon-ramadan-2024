@@ -4,10 +4,58 @@ import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {useTranslation} from "react-i18next";
 import useTextAnalyzerHooks from "../hooks/useTextAnalyzerHooks.tsx";
-
+import {useAppSelector} from "../store/hooks.ts";
+import {useEffect} from "react";
+// const API_KEY = ""
 function SpeechToTextAnalyzer() {
 	const {i18n} = useTranslation();
-    
+	const message = useAppSelector((state) => state.text.message);
+	/* The problem i don't know how to setup there api so i used a normal fetch request and i don't want to use claude because have a long responce more than 1 minute 
+	so if you know how to setup openai do it .
+	this is from openai platform : 
+	Remember that your API key is a secret! Do not share it with others or expose it in any client-side code (browsers, apps). Production requests must be routed through your own backend server where your API key can be securely loaded from an environment variable or key management service.
+
+
+	async function fetchMessageFromServer(message: string) {
+		const option: RequestInit = {
+			method: "POST",
+			headers: {
+				"x-api-key": `${API_KEY}`,
+				"Content-Type": "application/json", // assuming your content type is JSON
+				"anthropic-version": "2023-06-01",
+			},
+			mode: "no-cors",
+			body: JSON.stringify({
+				model: "claude-3-opus-20240229",
+				max_tokens: 1024,
+				messages: [
+					{
+						role: "user",
+						content: message,
+					},
+				],
+			}),
+		};
+
+		try {
+			const response = await fetch(
+				"https://api.anthropic.com/v1/messages",
+				option,
+			);
+			if (!response.ok) {
+				throw new Error(`HTTP error! Status: ${response.status}`);
+			}
+			// Handle successful response
+			const responseData = await response.json();
+			console.log(responseData); // or do something with the response data
+		} catch (error) {
+			console.error("Error:", error);
+		}
+	}
+   */
+	useEffect(() => {
+		// fetchMessageFromServer(message);
+	}, [message]);
 	const referenceText: string =
 		"باسم الله والصلاة والسلام على رسول الله. السلام عليكم أعضاء لجنة التحكيم، يسعدنا تقديم نموذج تطبيق تقديري يهدف فريقنا إلى تقديمه \n" +
 		"هدف التطبيق الرئيسي هو مراقبة قراءة الطفل وتحديد الكلمات التي يلفظها ومقارنتها مع النص المقدم أمامه \n" +
