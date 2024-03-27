@@ -1,5 +1,5 @@
 import i18next from "i18next";
-import {initReactI18next} from "react-i18next";
+import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 i18next
@@ -40,6 +40,7 @@ i18next
 					Theme: "الوضع",
 					Dark: "مظلم",
 					light: "مضيئ",
+					referenceText: "اكتب النص الخاص بك هنا",
 				},
 				navigation: {
 					home: "الصفحة الرئيسية",
@@ -78,6 +79,7 @@ i18next
 					Dark: "Dark",
 					light: "Light",
 					"Word Similarity Percentage": "Word Similarity Percentage",
+					referenceText: "write your own text here",
 				},
 				navigation: {
 					home: "Home",
