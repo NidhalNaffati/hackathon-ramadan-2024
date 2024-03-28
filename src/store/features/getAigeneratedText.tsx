@@ -4,11 +4,13 @@ import type {RootState} from "../store";
 // Define a type for the slice state
 interface textAiState {
 	message: string;
+	totalWords: number;
 }
 
 // Define the initial state using that type
 const initialState: textAiState = {
 	message: "",
+	totalWords: 0,
 };
 
 export const TextAiGenerator = createSlice({
@@ -21,10 +23,13 @@ export const TextAiGenerator = createSlice({
 			state.message = action.payload;
 			console.log(action.payload);
 		},
-	}
+		getTotalNumberWords: (state, action: PayloadAction<number>) => {
+			state.totalWords = action.payload;
+		},
+	},
 });
 
-export const {getUserMessage} = TextAiGenerator.actions;
+export const {getUserMessage, getTotalNumberWords} = TextAiGenerator.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectCount = (state: RootState) => state.text.message;

@@ -20,12 +20,13 @@ const ScriptComparison: React.FC<ComparisonProps> = ({
 		<>
 			{referenceWords.map((referenceWord, i) => {
 				const userWord = recognizedWords[i];
+				console.log(userWord);
 				const isWordSpelledCorrectly = isWordSimilar(
 					userWord,
 					referenceWord,
 					70,
 				);
-
+				// Make element for analyes feedback
 				return (
 					<span
 						key={i}
