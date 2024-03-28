@@ -23,4 +23,15 @@
 	.direction {
 		direction: rtl;
 	}
+	.scriptComparison {
+		display: block; /* Ensures it behaves like a block element */
+		width: 100%; /* Makes it take the full width available */
+		margin-top: 0; /* Resets any top margin */
+		margin-bottom: 0.5rem; /* Adds bottom margin for separation */
+	}
+	.scriptComparison span {
+		display: inline-block; /* Ensures each word is on its own line */
+		margin-right: 0.5rem; /* Adds space between words */
+		white-space: nowrap; /* Prevents wrapping of long words */
+	}
 }

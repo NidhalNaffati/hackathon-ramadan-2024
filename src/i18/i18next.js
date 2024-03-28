@@ -1,5 +1,5 @@
 import i18next from "i18next";
-import { initReactI18next } from "react-i18next";
+import {initReactI18next} from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 i18next
@@ -46,6 +46,7 @@ i18next
 					home: "الصفحة الرئيسية",
 					settings: "الإعدادات",
 					transcription: "إبدأ التمرين",
+					speechanalyse: "تحليل النتائج",
 				},
 			},
 			en: {
@@ -85,6 +86,7 @@ i18next
 					home: "Home",
 					settings: "Settings",
 					transcription: "Transcription",
+					speechanalyse: "Analyse resultes",
 				},
 			},
 		},

@@ -28,6 +28,14 @@ export function Navbar() {
 					</Link>
 				</li>
 				<li className="mr-4">
+					<Link
+						to={"/SpeechAnalyse"}
+						className="text-white hover:text-gray-300"
+					>
+						{t("navigation:speechanalyse")}
+					</Link>
+				</li>
+				<li className="mr-4">
 					<Link to={"/tracking"} className="text-white hover:text-gray-300">
 						{t("Progress tracking")}
 					</Link>

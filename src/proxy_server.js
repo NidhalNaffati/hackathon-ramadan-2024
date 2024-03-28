@@ -7,7 +7,7 @@ const Anthropic = require("@anthropic-ai/sdk");
 const bodyParser = require("body-parser");
 const app = express();
 const PORT = 3000; // Choose any available port
-const API_KEY = "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"; // Put your api here get a free one form this : https://console.anthropic.com/
+const API_KEY = ""; // Put your api here get a free one form this : https://console.anthropic.com/
 app.use(bodyParser.json());
 
 // Add middleware to handle preflight requests

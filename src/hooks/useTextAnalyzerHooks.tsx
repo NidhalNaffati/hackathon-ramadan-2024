@@ -5,9 +5,14 @@ import {
 	resetTextStateVariables,
 } from "../utils/speech-analyzer-utils";
 import {toast} from "react-toastify";
+import {useAppDispatch} from "../store/hooks";
+import {changeForDispatch} from "../store/features/getAigeneratedText";
 
 // Custom hook to handle the logic for the text analyzer
 const useTextAnalyzerHooks = (referenceParagraphs: string[]) => {
+	//Manipulate state for dispatch change
+	const dispatch = useAppDispatch();
+
 	// State variables
 	const [recognizedText, setRecognizedText] = useState<string>("");
 	const [lastRecognizedText, setLastRecognizedText] = useState<string>("");
@@ -65,6 +70,7 @@ const useTextAnalyzerHooks = (referenceParagraphs: string[]) => {
 	const goToNextParagraph = () => {
 		// Check if all paragraphs have been read
 		if (currentParagraphIndex === referenceParagraphs.length - 1) {
+			dispatch(changeForDispatch(true));
 			console.log("All paragraphs have been read.");
 			// Trigger alert when all text has been read
 			toast.success(
