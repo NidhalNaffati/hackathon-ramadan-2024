@@ -2,24 +2,24 @@
 
 # Mushajil al-Qira'ah al-Dhaki
 
- "Mushajil al-Qira'ah al-Dhaki" is a desktop application that allows new learners espacially children to practice reading passages while recording their voice. The AI technology instantly analyzes their speech, providing detailed feedback on spelling and other aspects of spoken language. This immediate feedback loop enables learners to identify areas for improvement quickly and track their progress over time.
+"Mushajil al-Qira'ah al-Dhaki" is a desktop application that allows new learners espacially children to practice reading passages while recording their voice. The AI technology instantly analyzes their speech, providing detailed feedback on spelling and other aspects of spoken language. This immediate feedback loop enables learners to identify areas for improvement quickly and track their progress over time.
 
- The application provide :
+The application provide :
 
 Support up to 30 languages:Enables learners to practice in their native language or any language they wish to learn, promoting inclusivity and engagement.
 
 Real instant feedback by AI:Provides immediate insights on spelling , facilitating quick adjustments and reinforcing correct language usage.
 
- Speech analysis: Offers detailed feedback on spelling mistakes, and rhythm, helping learners refine their speaking skills and develop accurate reading patterns.
+Speech analysis: Offers detailed feedback on spelling mistakes, and rhythm, helping learners refine their speaking skills and develop accurate reading patterns.
 
- Progress tracking: Allows learners to monitor their development over time, providing a clear understanding of strengths and weaknesses and facilitating focused efforts on areas needing improvement.
+Progress tracking: Allows learners to monitor their development over time, providing a clear understanding of strengths and weaknesses and facilitating focused efforts on areas needing improvement.
 
 ## مسجل القراءة الذكي 💬🎥
 
 ## اقرأ ارتقِ بصوتك
 
-
 ## Introduction
+
 The application is a speech to text application that uses the Vosk model to transcribe the speech to text.
 Then the application compares the transcribed text with the text that the user has entered the input field.
 
@@ -58,15 +58,17 @@ Those are the main technologies used in this project:
 
 ## Usage
 
-1. With in the `SpeechToTextAnalyzer` file in the `src/components` folder change the script that you want to read 📜 <br>
-   **Note**: Within the `SpeechToTextAnalyzer` make sure to use `\n` to indicate to separate paragraphs
-   Here is an example of a script:
-   ```typescript
-   const referenceText: string =
-   	"Hello, my name is Nidhal Naffati. \n" +
-   	"I am a software engineer\n" +
-   	"I am passionate about building software that helps people and solves real world problems.";
+1. Run the server file for that you can generate text by Ai
+
    ```
+   cd src
+   node proxy_server.js
+   ```
+
+   ```
+
+   ```
+
 2. Run the application with the following command
    ```sh
    npm run dev
@@ -74,7 +76,10 @@ Those are the main technologies used in this project:
 3. Click on the start button to start the process
 4. Start reading the script and the application will highlight the words that you are reading
 
-# video 
+# video
+
 https://youtu.be/V6DfUA9JSEA
-# presentaion 
+
+# presentaion
+
 https://docs.google.com/presentation/d/1LbK6pRwAsIzlReleLNf4ToDs0YPg3rjsLJSvmspuVEE/edit#slide=id.g2bd619d2532_0_757
