@@ -1,6 +1,31 @@
 # السَّلامُ عَلَيْكُم ورَحْمَةُ اللهِ وَبَرَكاتُهُ
 
-# Installation
+## مسجل القراءة الذكي 💬🎥
+
+## اقرأ ارتقِ بصوتك
+
+
+## Introduction
+The application is a speech to text application that uses the Vosk model to transcribe the speech to text.
+Then the application compares the transcribed text with the text that the user has entered the input field.
+
+The application is directed to children who are learning to read and want to improve their reading skills.
+
+## Technologies Used
+
+Those are the main technologies used in this project:
+<img alt="main tech used" src="./docs/smart-telepromter-stuck.png"/>
+
+## Architecture
+
+<img alt="app-architecture" src="./docs/app-architecture.gif"/>
+
+1. After uploading a script, the user initiates the process by clicking the "Start" button.
+2. The main process launches a child process to run Vosk, triggered by an event listener for the click.
+3. Vosk transcribes audio from the microphone, sending the results to the renderer process. <br>
+   The renderer process, equipped with an event listener, then compares the transcribed text with the uploaded script.
+
+## Installation
 
 1. Make sure to have Node.js installed on your machine
    You can install it using this link here [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
@@ -19,18 +44,10 @@
 
 ## Usage
 
-1. With in the `SpeechToTextAnalyzer` file in the `src/components` folder change the script that you want to read 📜 <br>
-   **Note**: Within the `SpeechToTextAnalyzer` make sure to use `\n` to indicate to separate paragraphs
-   Here is an example of a script:
-   ```typescript
-   const referenceText: string =
-   	"Hello, my name is Nidhal Naffati. \n" +
-   	"I am a software engineer\n" +
-   	"I am passionate about building software that helps people and solves real world problems.";
-   ```
-2. Run the application with the following command
+1. Run the application with the following command
    ```sh
    npm run dev
    ```
-3. Click on the start button to start the process
-4. Start reading the script and the application will highlight the words that you are reading
+2. wire your text in the input field
+3. click on the button to start the speech recognition
+4. start speaking and the text will be displayed in the text area below the input field
