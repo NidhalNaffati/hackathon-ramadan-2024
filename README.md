@@ -14,7 +14,32 @@
 
 # # Progress tracking: Allows learners to monitor their development over time, providing a clear understanding of strengths and weaknesses and facilitating focused efforts on areas needing improvement.
 
-# Installation
+## مسجل القراءة الذكي 💬🎥
+
+## اقرأ ارتقِ بصوتك
+
+
+## Introduction
+The application is a speech to text application that uses the Vosk model to transcribe the speech to text.
+Then the application compares the transcribed text with the text that the user has entered the input field.
+
+The application is directed to children who are learning to read and want to improve their reading skills.
+
+## Technologies Used
+
+Those are the main technologies used in this project:
+<img alt="main tech used" src="./docs/smart-telepromter-stuck.png"/>
+
+## Architecture
+
+<img alt="app-architecture" src="./docs/app-architecture.gif"/>
+
+1. After uploading a script, the user initiates the process by clicking the "Start" button.
+2. The main process launches a child process to run Vosk, triggered by an event listener for the click.
+3. Vosk transcribes audio from the microphone, sending the results to the renderer process. <br>
+   The renderer process, equipped with an event listener, then compares the transcribed text with the uploaded script.
+
+## Installation
 
 1. Make sure to have Node.js installed on your machine
    You can install it using this link here [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
@@ -33,20 +58,18 @@
 
 ## Usage
 
-1. Put your text or let ai generate it for you
+1. With in the `SpeechToTextAnalyzer` file in the `src/components` folder change the script that you want to read 📜 <br>
+   **Note**: Within the `SpeechToTextAnalyzer` make sure to use `\n` to indicate to separate paragraphs
+   Here is an example of a script:
+   ```typescript
+   const referenceText: string =
+   	"Hello, my name is Nidhal Naffati. \n" +
+   	"I am a software engineer\n" +
+   	"I am passionate about building software that helps people and solves real world problems.";
+   ```
 2. Run the application with the following command
    ```sh
    npm run dev
    ```
-3. Run the server of the application to handle ai request
-   ```sh
-   cd src
-   node proxy_server.js
-   ```
-4. Click on the start button to start the process
-5. Start reading the script and the application will highlight the words that you are reading
-
-# Video
-https://youtu.be/V6DfUA9JSEA
-# presentation 
-https://docs.google.com/presentation/d/1LbK6pRwAsIzlReleLNf4ToDs0YPg3rjsLJSvmspuVEE/edit?usp=sharing
+3. Click on the start button to start the process
+4. Start reading the script and the application will highlight the words that you are reading
