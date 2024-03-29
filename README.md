@@ -2,17 +2,17 @@
 
 # Mushajil al-Qira'ah al-Dhaki
 
-# # "Mushajil al-Qira'ah al-Dhaki" is a desktop application that allows new learners espacially children to practice reading passages while recording their voice. The AI technology instantly analyzes their speech, providing detailed feedback on spelling and other aspects of spoken language. This immediate feedback loop enables learners to identify areas for improvement quickly and track their progress over time.
+ "Mushajil al-Qira'ah al-Dhaki" is a desktop application that allows new learners espacially children to practice reading passages while recording their voice. The AI technology instantly analyzes their speech, providing detailed feedback on spelling and other aspects of spoken language. This immediate feedback loop enables learners to identify areas for improvement quickly and track their progress over time.
 
-# # The application provide :
+ The application provide :
 
-# # Support up to 30 languages:Enables learners to practice in their native language or any language they wish to learn, promoting inclusivity and engagement.
+Support up to 30 languages:Enables learners to practice in their native language or any language they wish to learn, promoting inclusivity and engagement.
 
-# # Real instant feedback by AI:Provides immediate insights on spelling , facilitating quick adjustments and reinforcing correct language usage.
+Real instant feedback by AI:Provides immediate insights on spelling , facilitating quick adjustments and reinforcing correct language usage.
 
-# # Speech analysis: Offers detailed feedback on spelling mistakes, and rhythm, helping learners refine their speaking skills and develop accurate reading patterns.
+ Speech analysis: Offers detailed feedback on spelling mistakes, and rhythm, helping learners refine their speaking skills and develop accurate reading patterns.
 
-# # Progress tracking: Allows learners to monitor their development over time, providing a clear understanding of strengths and weaknesses and facilitating focused efforts on areas needing improvement.
+ Progress tracking: Allows learners to monitor their development over time, providing a clear understanding of strengths and weaknesses and facilitating focused efforts on areas needing improvement.
 
 ## مسجل القراءة الذكي 💬🎥
 
