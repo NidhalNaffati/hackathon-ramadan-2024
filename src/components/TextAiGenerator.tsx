@@ -1,18 +1,23 @@
 import {useRef, useState} from "react";
 import {useAppDispatch} from "../store/hooks";
 import {getUserMessage} from "../store/features/getAigeneratedText";
+import {useTranslation} from "react-i18next";
 
-const TextAiGenerator: React.FC = () => {
+interface UserWriteMessage {
+	isWriteMessage: (isClick: boolean) => void;
+}
+const TextAiGenerator: React.FC<UserWriteMessage> = ({isWriteMessage}) => {
 	const [isWriteSomthing, setIsWriteSomthing] = useState<boolean>(false);
 	const [isNeedSuggestion, setIsNeedSuggestion] = useState<boolean>(false);
 	const [defaultInputValue, setDefautlInputValue] = useState<string>("");
 	const userMessage = useRef<HTMLInputElement>(null);
 	const dispatch = useAppDispatch();
+	const {t, i18n} = useTranslation();
 	const suggestions: string[] = [
-		"The Magic Garden Adventure",
-		"The Curious Case of Charlie and the Lost Kite",
-		"The Secret of the Enchanted Forest",
-		"Milly and the Mysterious Treasure Map",
+		t("The Magic Garden Adventure"),
+		t("The Curious Case of Charlie and the Lost Kite"),
+		t("The Secret of the Enchanted Forest"),
+		t("Milly and the Mysterious Treasure Map"),
 	];
 	return (
 		<>
@@ -25,7 +30,7 @@ const TextAiGenerator: React.FC = () => {
 								setIsNeedSuggestion(!isNeedSuggestion);
 							}}
 						>
-							Suggestions?
+							{t("suggestions")}
 						</button>
 					)}
 
@@ -66,8 +71,12 @@ const TextAiGenerator: React.FC = () => {
 						<path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"></path>
 					</svg>
 					<input
-						placeholder="What you want to read today?"
-						className="bg-transparent flex-1 border-none text-white placeholder-gray-400 ml-4 mr-2 py-1 px-2 focus:ring-0 outline-none"
+						placeholder={t("What you want to read today?")}
+						className={
+							i18n.resolvedLanguage == "ar"
+								? "bg-transparent flex-1 border-none text-white placeholder-gray-400 ml-4 mr-2 py-1 px-2 focus:ring-0 outline-none direction"
+								: "bg-transparent flex-1 border-none text-white placeholder-gray-400 ml-4 mr-2 py-1 px-2 focus:ring-0 outline-none"
+						}
 						type="text"
 						defaultValue={defaultInputValue}
 						onChange={(event) => {
@@ -88,6 +97,7 @@ const TextAiGenerator: React.FC = () => {
 								);
 							} else {
 								dispatch(getUserMessage(userMessage.current!.value));
+								isWriteMessage(true);
 							}
 						}}
 					>

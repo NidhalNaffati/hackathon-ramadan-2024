@@ -2,12 +2,15 @@ import {useState, useEffect} from "react";
 import {IpcRenderer} from "electron";
 import MicState from "./MicState.tsx";
 import {useTranslation} from "react-i18next";
+import {useDispatch} from "react-redux";
+import {changeForDispatch} from "../store/features/getAigeneratedText.tsx";
 
 const ipcRenderer: IpcRenderer = window.ipcRenderer;
 
 function VoskControl() {
 	const [isRunning, setIsRunning] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
+	const dispatch = useDispatch();
 	const {t} = useTranslation();
 	useEffect(() => {
 		ipcRenderer.on("vosk-status", (_event, started) => {
@@ -27,6 +30,7 @@ function VoskControl() {
 
 	function stopVosk() {
 		ipcRenderer.send("stop-recognition");
+		dispatch(changeForDispatch(true));
 	}
 
 	return (

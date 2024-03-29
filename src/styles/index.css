@@ -19,6 +19,9 @@
 		-webkit-text-size-adjust: 100%;
 	}
 }
+.loader {
+	@apply w-[40px] h-[40px] border-2  border-t-white border-l-white border-r-white border-transparent rounded-full animate-spin;
+}
 @layer utilities {
 	.direction {
 		direction: rtl;

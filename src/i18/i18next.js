@@ -41,6 +41,29 @@ i18next
 					Dark: "مظلم",
 					light: "مضيئ",
 					referenceText: "اكتب النص الخاص بك هنا",
+					suggestions: "إقتراحات ؟",
+					"What you want to read today?": "مذا تريد أن تقرأ اليوم؟",
+					"The Magic Garden Adventure": "المغامرة في حديقة السحر",
+					"The Curious Case of Charlie and the Lost Kite":
+						"القضية الفضولية لتشارلي والطائرة المفقودة",
+					"The Secret of the Enchanted Forest": "سر الغابة الساحرة",
+					"Milly and the Mysterious Treasure Map": "ميلي والخريطة الغامضة",
+					"Ai generated story": "توليد قصة بواسطة الذكاء الإصطناعي",
+					"Read your own text": "إقرأ النص الخاص بك",
+					"Entre your title here before continue":
+						"أدخل العنوان الخاص بك قبل المتابعة",
+					"Enter reference text here": "أدخل النص الخاص بك هنا",
+					"Analyse your speech": "نتائج تحليل القراءة الخاصة بك",
+					"To get feedback read something first":
+						"لتحليل نتائجك قم بالقراءة أولا ",
+					Title: "العنوان ",
+					"Words Read": "عدد كلمات النص",
+					Language: "اللغة",
+					"Spelling Mistakes": "أخطاء القراءة",
+					"word per minute": "عدد الكلمات في الدقيقة",
+					"word minute": "كلمة في الدقيقة",
+					Accuracy: "دقة القراءة",
+					Transcription: "النص",
 				},
 				navigation: {
 					home: "الصفحة الرئيسية",
@@ -81,6 +104,8 @@ i18next
 					light: "Light",
 					"Word Similarity Percentage": "Word Similarity Percentage",
 					referenceText: "write your own text here",
+					suggestions: "Suggestions?",
+					"What you want to read today?": "What you want to read today?",
 				},
 				navigation: {
 					home: "Home",
