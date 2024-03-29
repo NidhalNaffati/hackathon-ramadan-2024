@@ -1,9 +1,16 @@
 import {useTranslation} from "react-i18next";
 import {Link} from "react-router-dom";
 import ThemeSwitcher from "./ThemeSwitcher.tsx";
+import { useEffect } from "react";
 
 export function Navbar() {
-	const {t, i18n} = useTranslation();
+	const { t, i18n } = useTranslation();
+
+	useEffect(() => {
+		const savedLanguage = localStorage.getItem("language") || "en";
+		i18n.changeLanguage(savedLanguage);
+	}, [i18n]);
+
 	return (
 		<nav className=" flex bg-gray-800 py-4 w-full">
 			<ul

@@ -32,9 +32,16 @@ const ScriptComparison: React.FC<ComparisonProps> = ({
 	const recognizedWords = recognizedText.split(" ");
 	const calcAccuracy: CalculateAccuracy = {trueWord: 0, falseWord: 0};
 	const ElementAfterTraitement: ElementTraitement[] = [];
+
+
 	const returnedObj = referenceWords.map((referenceWord, i) => {
 		const userWord = recognizedWords[i];
-		const isWordSpelledCorrectly = isWordSimilar(userWord, referenceWord, 70);
+
+		const wordSimilarityPercentage = localStorage.getItem("wordSimilarityPercentage") || "70";
+		const isWordSpelledCorrectly = isWordSimilar(userWord, referenceWord, parseInt(wordSimilarityPercentage));
+
+		console.log("wordSimilarityPercentage: ", wordSimilarityPercentage);
+
 		// Make element for analyes feedback
 		if (isWordSpelledCorrectly) {
 			calcAccuracy.trueWord += 1;
