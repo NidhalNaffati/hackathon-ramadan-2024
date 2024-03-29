@@ -33,7 +33,7 @@ export default function Home() {
 										loading="lazy"
 										alt="OpenAI logo"
 									/>
-									<div className="text-black font-bold">Powered by GPT</div>
+									<div className="text-black font-bold">Powered by Vosks</div>
 								</div>
 							</div>
 						</div>

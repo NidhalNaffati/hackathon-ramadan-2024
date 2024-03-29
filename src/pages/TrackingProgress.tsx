@@ -15,26 +15,24 @@ export default function TrackingProgress() {
 
 	// Concatenate day, month, and year with "/"
 	const formattedDate = day + "/" + month + "/" + year;
-	const totalNumber = useAppSelector((state) => state.text.totalWords);
-	const title = useAppSelector((state) => state.text.title);
-	const accuracy = useAppSelector((state) => state.text.accuracy);
-	const wrongSpellingWords = useAppSelector(
-		(state) => state.text.wrongSpellingWords,
-	);
-
+	const Tasks = useAppSelector((state) => state.text.Tasks);
 	return (
 		<div className="p-6">
 			<h1 className="font-bold text-[1.25rem] mb-[1rem]">
 				Today {formattedDate}
 			</h1>
 			<ul className="flex flex-col items-center">
-				<TaskElement
-					title={title}
-					numberWords={totalNumber}
-					wrongSpellingWords={wrongSpellingWords}
-					accuracy={accuracy}
-					wordParMinute={15}
-				/>
+				{Tasks.map((item) => {
+					return (
+						<TaskElement
+							title={item.title}
+							numberWords={item.totalWords}
+							wrongSpellingWords={item.wrongSpellingWords}
+							accuracy={item.accuracy}
+							wordParMinute={15}
+						/>
+					);
+				})}
 			</ul>
 		</div>
 	);

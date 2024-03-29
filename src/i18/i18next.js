@@ -8,7 +8,7 @@ i18next
 	.init({
 		debug: false,
 		fallbackLng: "ar",
-		lng: "ar",
+		lng: "en",
 		resources: {
 			ar: {
 				translation: {
@@ -66,6 +66,8 @@ i18next
 					Transcription: "النص",
 					"Save Task": "إحفظ النتائج",
 					"Task saved with success!": "تم حفظ النتائج بنجاح",
+					"Restore Defaults Settings": "إسترجاع الإعدادات الإفتراضية",
+					"Word Similarity Percentage": "نسبة التشابه في الكلمة",
 				},
 				navigation: {
 					home: "الصفحة الرئيسية",
@@ -134,6 +136,7 @@ i18next
 					Transcription: "Transcription",
 					"Save Task": "Save Task",
 					"Task saved with success!": "Task saved with success!",
+					"Restore Defaults Settings": "Restore Defaults Settings",
 				},
 				navigation: {
 					home: "Home",

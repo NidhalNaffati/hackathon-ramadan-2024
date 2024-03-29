@@ -1,7 +1,8 @@
 import {Link} from "react-router-dom";
-import {useAppSelector} from "../store/hooks";
+import {useAppDispatch, useAppSelector} from "../store/hooks";
 import {useTranslation} from "react-i18next";
 import {useState} from "react";
+import {CreateNewTask} from "../store/features/getAigeneratedText";
 function SpeechAnalyse() {
 	const title = useAppSelector((state) => state.text.title);
 	const message = useAppSelector((state) => state.text.message);
@@ -13,6 +14,7 @@ function SpeechAnalyse() {
 	const wrongSpellingWords = useAppSelector(
 		(state) => state.text.wrongSpellingWords,
 	);
+	const dispatch = useAppDispatch();
 	const {t, i18n} = useTranslation();
 	const [isClickSave, setIsClickSave] = useState<boolean>(false);
 	return (
@@ -35,6 +37,14 @@ function SpeechAnalyse() {
 								className="cursor-pointer my-[1rem] inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-green-500 hover:bg-[#444] text-white mb-[1rem]"
 								onClick={() => {
 									alert(t("Task saved with success!"));
+									dispatch(
+										CreateNewTask({
+											title,
+											totalWords: totalNumber,
+											accuracy,
+											wrongSpellingWords,
+										}),
+									);
 									setIsClickSave(true);
 								}}
 							>

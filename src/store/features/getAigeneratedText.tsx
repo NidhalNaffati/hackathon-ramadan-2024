@@ -5,6 +5,12 @@ interface ElementTraitement {
 	className: string;
 	value: string;
 }
+interface Task {
+	totalWords: number;
+	title: string;
+	accuracy: string;
+	wrongSpellingWords: number;
+}
 interface textAiState {
 	message: string;
 	totalWords: number;
@@ -13,6 +19,7 @@ interface textAiState {
 	accuracy: string;
 	wrongSpellingWords: number;
 	isReady: boolean;
+	Tasks: Task[];
 }
 
 // Define the initial state using that type
@@ -24,6 +31,7 @@ const initialState: textAiState = {
 	accuracy: "0",
 	wrongSpellingWords: 0,
 	isReady: false,
+	Tasks: [],
 };
 
 export const TextAiGenerator = createSlice({
@@ -62,6 +70,9 @@ export const TextAiGenerator = createSlice({
 		changeForDispatch: (state, action: PayloadAction<boolean>) => {
 			state.isReady = action.payload;
 		},
+		CreateNewTask: (state, action: PayloadAction<Task>) => {
+			state.Tasks.push(action.payload);
+		},
 	},
 });
 
@@ -71,7 +82,7 @@ export const {
 	getAccuracy,
 	getAllElementForAnalyse,
 	changeForDispatch,
+	CreateNewTask,
 } = TextAiGenerator.actions;
-
 
 export default TextAiGenerator.reducer;

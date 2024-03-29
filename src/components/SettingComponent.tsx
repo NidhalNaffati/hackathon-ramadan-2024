@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import React, {useState} from "react";
+import {useTranslation} from "react-i18next";
 
 const SettingComponent: React.FC = () => {
-	const { t, i18n } = useTranslation();
+	const {t, i18n} = useTranslation();
 
 	const storedLanguage = localStorage.getItem("language") || "en";
 	const storedTheme = localStorage.getItem("theme") || "light";
-	const storedWordSimilarityPercentage =
-		parseInt(localStorage.getItem("wordSimilarityPercentage") || "70");
+	const storedWordSimilarityPercentage = parseInt(
+		localStorage.getItem("wordSimilarityPercentage") || "70",
+	);
 
 	const [language, setLanguage] = useState(storedLanguage);
 	const [theme, setTheme] = useState(storedTheme);
@@ -58,12 +59,15 @@ const SettingComponent: React.FC = () => {
 	return (
 		<>
 			<div className=" w-[400px] border rounded-md border-white mx-auto m-[1rem] p-[15px]">
-				<h2>{t("navigation:settings")}</h2>
-				<div>
+				<h2 className={i18n.resolvedLanguage == "ar" ? "direction" : ""}>
+					{t("navigation:settings")}
+				</h2>
+				<div className={i18n.resolvedLanguage == "ar" ? "direction" : ""}>
 					<label htmlFor="language">{t("Language")}: </label>
 					<select
 						id="language"
 						value={language}
+						className="text-black"
 						onChange={(e) => handleLanguageChange(e.target.value)}
 					>
 						<option value="en">English</option>
@@ -71,11 +75,12 @@ const SettingComponent: React.FC = () => {
 						{/* Add more language options here */}
 					</select>
 				</div>
-				<div>
+				<div className={i18n.resolvedLanguage == "ar" ? "direction" : ""}>
 					<label htmlFor="theme">{t("Theme")}: </label>
 					<select
 						id="theme"
 						value={theme}
+						className="text-black"
 						onChange={(e) => handleThemeChange(e.target.value)}
 					>
 						<option value="light">Light</option>
@@ -83,7 +88,7 @@ const SettingComponent: React.FC = () => {
 						{/* Add more theme options here */}
 					</select>
 				</div>
-				<div>
+				<div className={i18n.resolvedLanguage == "ar" ? "direction" : ""}>
 					<label htmlFor="wordSimilarityPercentage">
 						{t("Word Similarity Percentage")}:{" "}
 					</label>
@@ -91,6 +96,7 @@ const SettingComponent: React.FC = () => {
 						type="number"
 						id="wordSimilarityPercentage"
 						value={wordSimilarityPercentage}
+						className="text-black"
 						onChange={(e) =>
 							handleWordSimilarityPercentageChange(parseInt(e.target.value))
 						}
