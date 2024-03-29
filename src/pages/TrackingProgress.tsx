@@ -22,14 +22,15 @@ export default function TrackingProgress() {
 				Today {formattedDate}
 			</h1>
 			<ul className="flex flex-col items-center">
-				{Tasks.map((item) => {
+				{Tasks.map((item, i) => {
 					return (
 						<TaskElement
+							n={i}
 							title={item.title}
 							numberWords={item.totalWords}
 							wrongSpellingWords={item.wrongSpellingWords}
 							accuracy={item.accuracy}
-							wordParMinute={15}
+							wordParMinute={2}
 						/>
 					);
 				})}

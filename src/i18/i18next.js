@@ -60,7 +60,7 @@ i18next
 					"Words Read": "عدد كلمات النص",
 					Language: "اللغة",
 					"Spelling Mistakes": "أخطاء القراءة",
-					"words per minute": "عدد الكلمات في الدقيقة",
+					"words per minute": "سرعة القراءة",
 					"word minute": "كلمة في الدقيقة",
 					Accuracy: "دقة القراءة",
 					Transcription: "النص",

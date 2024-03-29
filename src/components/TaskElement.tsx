@@ -8,6 +8,7 @@ interface TaskProps {
 	numberWords: number;
 	wrongSpellingWords: number;
 	accuracy: string;
+	n: number;
 }
 const TaskElement: React.FC<TaskProps> = ({
 	title,
@@ -15,6 +16,7 @@ const TaskElement: React.FC<TaskProps> = ({
 	numberWords,
 	wrongSpellingWords,
 	accuracy,
+	n,
 }) => {
 	// we need to change the time here it's not related to the exacte time were the task start
 	const today = new Date();
@@ -32,7 +34,7 @@ const TaskElement: React.FC<TaskProps> = ({
 					<div className="flex flex-col text-center">
 						<p>{readingSession}</p>
 						<h3 className="font-semibold whitespace-nowrap tracking-tight text-base">
-							Session #123
+							Session {n}
 						</h3>
 						<p className="text-muted-foreground text-sm">
 							Started 2 minutes ago

@@ -30,7 +30,7 @@ function SpeechAnalyse() {
 				</div>
 			)}
 			{message != "" && (
-				<div className="p-6">
+				<div className="p-6 px-10 ">
 					{!isClickSave && (
 						<div className="flex justify-center">
 							<div
@@ -61,79 +61,88 @@ function SpeechAnalyse() {
 					>
 						{t("Analyse your speech")}
 					</h1>
-					<div className="border bg-white text-black w-full rounded-lg shadow-sm">
-						<div className="flex-col space-y-1.5 py-2 flex items-center gap-4">
-							<div className="flex flex-col text-center">
-								<p
-									className={
-										i18n.resolvedLanguage == "ar"
-											? "direction font-bold"
-											: "font-bold"
-									}
-								>
-									{t("Title")}:{title}
-								</p>
+					<div className="flex justify-center items-center">
+						<div className=" w-[500px] ">
+							<div className="border bg-white text-black w-full rounded-lg shadow-sm ">
+								<div className="flex-col space-y-1.5 py-2 flex items-center gap-4">
+									<div className="flex flex-col text-center">
+										<p
+											className={
+												i18n.resolvedLanguage == "ar"
+													? "direction font-bold"
+													: "font-bold"
+											}
+										>
+											{t("Title")}:{title}
+										</p>
+									</div>
+								</div>
+								<div className="flex flex-col gap-4 p-2">
+									<ul className="grid  gap-2 text-sm">
+										<li
+											className={
+												i18n.resolvedLanguage == "ar"
+													? "flex items-center justify-between direction"
+													: "flex items-center justify-between"
+											}
+										>
+											<span className="font-medium">{t("Words Read")}</span>
+											<span className="text-right">{totalNumber}</span>
+										</li>
+										<li
+											className={
+												i18n.resolvedLanguage == "ar"
+													? "flex items-center justify-between direction"
+													: "flex items-center justify-between"
+											}
+										>
+											<span className="font-medium">{t("Language")}</span>
+											<span className="text-right">
+												{i18n.resolvedLanguage == "ar" ? "عربي" : "English"}
+											</span>
+										</li>
+										<li
+											className={
+												i18n.resolvedLanguage == "ar"
+													? "flex items-center justify-between direction"
+													: "flex items-center justify-between"
+											}
+										>
+											<span className="font-medium">
+												{t("Spelling Mistakes")}
+											</span>
+											<span className="text-right">{wrongSpellingWords}</span>
+										</li>
+										<li
+											className={
+												i18n.resolvedLanguage == "ar"
+													? "flex items-center justify-between direction"
+													: "flex items-center justify-between"
+											}
+										>
+											<span className="font-medium">
+												{t("words per minute")}
+											</span>
+											<span className="text-right">
+												{"2"} {t("word minute")}
+											</span>
+										</li>
+										<li
+											className={
+												i18n.resolvedLanguage == "ar"
+													? "flex items-center justify-between direction"
+													: "flex items-center justify-between"
+											}
+										>
+											<span className="font-medium">{t("Accuracy")}</span>
+											<span className="text-right">{accuracy}%</span>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
-						<div className="flex flex-col gap-4 p-2">
-							<ul className="grid grid-cols-2 gap-2 text-sm">
-								<li
-									className={
-										i18n.resolvedLanguage == "ar"
-											? "flex items-center justify-between direction"
-											: "flex items-center justify-between"
-									}
-								>
-									<span className="font-medium">{t("Words Read")}</span>
-									<span className="text-right">{totalNumber}</span>
-								</li>
-								<li
-									className={
-										i18n.resolvedLanguage == "ar"
-											? "flex items-center justify-between direction"
-											: "flex items-center justify-between"
-									}
-								>
-									<span className="font-medium">{t("Language")}</span>
-									<span className="text-right">
-										{i18n.resolvedLanguage == "ar" ? "عربي" : "English"}
-									</span>
-								</li>
-								<li
-									className={
-										i18n.resolvedLanguage == "ar"
-											? "flex items-center justify-between direction"
-											: "flex items-center justify-between"
-									}
-								>
-									<span className="font-medium">{t("Spelling Mistakes")}</span>
-									<span className="text-right">{wrongSpellingWords}</span>
-								</li>
-								<li
-									className={
-										i18n.resolvedLanguage == "ar"
-											? "flex items-center justify-between direction"
-											: "flex items-center justify-between"
-									}
-								>
-									<span className="font-medium">{t("words per minute")}</span>
-									<span className="text-right">
-										{"25"} {t("word minute")}
-									</span>
-								</li>
-								<li
-									className={
-										i18n.resolvedLanguage == "ar"
-											? "flex items-center justify-between direction"
-											: "flex items-center justify-between"
-									}
-								>
-									<span className="font-medium">{t("Accuracy")}</span>
-									<span className="text-right">{accuracy}%</span>
-								</li>
-							</ul>
-						</div>
 					</div>
+
 					<div>
 						<h1
 							className={
