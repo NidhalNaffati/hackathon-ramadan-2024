@@ -60,10 +60,12 @@ i18next
 					"Words Read": "عدد كلمات النص",
 					Language: "اللغة",
 					"Spelling Mistakes": "أخطاء القراءة",
-					"word per minute": "عدد الكلمات في الدقيقة",
+					"words per minute": "عدد الكلمات في الدقيقة",
 					"word minute": "كلمة في الدقيقة",
 					Accuracy: "دقة القراءة",
 					Transcription: "النص",
+					"Save Task": "إحفظ النتائج",
+					"Task saved with success!": "تم حفظ النتائج بنجاح",
 				},
 				navigation: {
 					home: "الصفحة الرئيسية",
@@ -105,7 +107,33 @@ i18next
 					"Word Similarity Percentage": "Word Similarity Percentage",
 					referenceText: "write your own text here",
 					suggestions: "Suggestions?",
+
+					"The Curious Case of Charlie and the Lost Kite":
+						"The Curious Case of Charlie and the Lost Kite",
+					"The Secret of the Enchanted Forest":
+						"The Secret of the Enchanted Forest",
+					"Milly and the Mysterious Treasure Map":
+						"Milly and the Mysterious Treasure Map",
+					"The Magic Garden Adventure": "The Magic Garden Adventure",
 					"What you want to read today?": "What you want to read today?",
+					"Ai generated story": "Ai generated story",
+					"Read your own text": "Read your own text",
+					"Entre your title here before continue":
+						"Entre your title here before continue",
+					"Enter reference text here": "Enter reference text here",
+					"Analyze your speech": "Analyze your speech",
+					"To get feedback read something first":
+						"To get feedback read something first",
+					Title: "Title",
+					"Words Read": "Words Read",
+					Language: "Language",
+					"Spelling Mistakes": "Spelling Mistakes",
+					"Words per minute": "Words per minute",
+					"Word per minute": "Word per minute",
+					Accuracy: "Accuracy",
+					Transcription: "Transcription",
+					"Save Task": "Save Task",
+					"Task saved with success!": "Task saved with success!",
 				},
 				navigation: {
 					home: "Home",

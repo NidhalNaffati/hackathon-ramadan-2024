@@ -1,5 +1,5 @@
 import TaskElement from "../components/TaskElement";
-
+import {useAppSelector} from "../store/hooks";
 export default function TrackingProgress() {
 	// Get current date
 	const today = new Date();
@@ -15,16 +15,24 @@ export default function TrackingProgress() {
 
 	// Concatenate day, month, and year with "/"
 	const formattedDate = day + "/" + month + "/" + year;
+	const totalNumber = useAppSelector((state) => state.text.totalWords);
+	const title = useAppSelector((state) => state.text.title);
+	const accuracy = useAppSelector((state) => state.text.accuracy);
+	const wrongSpellingWords = useAppSelector(
+		(state) => state.text.wrongSpellingWords,
+	);
+
 	return (
 		<div className="p-6">
-			<h1 className="font-bold text-[1.25rem] mb-[1rem]">Today {formattedDate}</h1>
+			<h1 className="font-bold text-[1.25rem] mb-[1rem]">
+				Today {formattedDate}
+			</h1>
 			<ul className="flex flex-col items-center">
 				<TaskElement
-					title="the appended world"
-					language="english"
-					duration={{minutes: 12, seconds: 10}}
-					numberWords={320}
-					comprehension={60}
+					title={title}
+					numberWords={totalNumber}
+					wrongSpellingWords={wrongSpellingWords}
+					accuracy={accuracy}
 					wordParMinute={15}
 				/>
 			</ul>
