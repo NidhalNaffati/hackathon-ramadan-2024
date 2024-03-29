@@ -73,3 +73,8 @@ Those are the main technologies used in this project:
    ```
 3. Click on the start button to start the process
 4. Start reading the script and the application will highlight the words that you are reading
+
+# video 
+https://youtu.be/V6DfUA9JSEA
+# presentaion 
+https://docs.google.com/presentation/d/1LbK6pRwAsIzlReleLNf4ToDs0YPg3rjsLJSvmspuVEE/edit#slide=id.g2bd619d2532_0_757
