@@ -1,7 +1,6 @@
 import { app, BrowserWindow } from "electron";
 import path from "node:path";
 import { initializeVoskIPC } from "./ipc/vosk.ts";
-import { initializeSettingsIPC } from "./ipc/settings.ts";
 
 process.env.DIST = path.join(__dirname, "../dist");
 process.env.VITE_PUBLIC = app.isPackaged
@@ -39,8 +38,6 @@ function createWindow() {
 	// initialize IPC handlers for Vosk
 	initializeVoskIPC(win);
 
-	// initialize IPC handlers for settings
-	initializeSettingsIPC();
 }
 
 app.on("window-all-closed", () => {
