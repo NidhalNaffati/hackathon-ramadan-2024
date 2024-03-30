@@ -13,12 +13,12 @@ language.
 This immediate feedback loop enables learners to identify areas for improvement quickly and track their progress over
 time.
 
-The application provide :
+The application provides:
 
-* Support up to 30 languages:Enables learners to practice in their native language or any language they wish to learn,
+* Support up to 30 languages: Enables learners to practice in their native language or any language they wish to learn,
   promoting inclusivity and engagement.
 
-* Real instant feedback by AI:Provides immediate insights on spelling , facilitating quick adjustments and reinforcing
+* Real instant feedback by AI: Provides immediate insights on spelling, facilitating quick adjustments and reinforcing
   correct language usage.
 
 * Speech analysis: Offers detailed feedback on spelling mistakes, and rhythm, helping learners refine their speaking
@@ -27,6 +27,11 @@ The application provide :
 * Progress tracking: Allows learners to monitor their development over time, providing a clear understanding of
   strengths
   and weaknesses and facilitating focused efforts on areas needing improvement.
+
+## Demo
+
+https://github.com/NidhalNaffati/hackathon-ramadan-2024/assets/100954462/5804f713-b540-42c1-9dd1-4f7400336500
+
 
 ## Technologies Used
 
@@ -69,7 +74,7 @@ Those are the main technologies used in this project:
 2. Upload the script that you want to read
     1. Write or paste the script in the text area
     2. You can generate a script with an AI assistant like GPT-3.
-       for that u have to run the following command
+       for that, you have to run the following command
        ```
        cd src
        node proxy_server.js
@@ -77,5 +82,6 @@ Those are the main technologies used in this project:
 3. Click on the start button to start the process
 4. Start reading the script and the application will highlight the words that you are reading
 
-# Presentation
+
+## Presentation
 https://docs.google.com/presentation/d/1LbK6pRwAsIzlReleLNf4ToDs0YPg3rjsLJSvmspuVEE/edit#slide=id.g2bd619d2532_0_757
