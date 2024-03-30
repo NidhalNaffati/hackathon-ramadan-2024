@@ -1,29 +1,32 @@
-# السَّلامُ عَلَيْكُم ورَحْمَةُ اللهِ وَبَرَكاتُهُ
+## السَّلامُ عَلَيْكُم ورَحْمَةُ اللهِ وَبَرَكاتُهُ
 
-# Mushajil al-Qira'ah al-Dhaki
-
-"Mushajil al-Qira'ah al-Dhaki" is a desktop application that allows new learners espacially children to practice reading passages while recording their voice. The AI technology instantly analyzes their speech, providing detailed feedback on spelling and other aspects of spoken language. This immediate feedback loop enables learners to identify areas for improvement quickly and track their progress over time.
-
-The application provide :
-
-Support up to 30 languages:Enables learners to practice in their native language or any language they wish to learn, promoting inclusivity and engagement.
-
-Real instant feedback by AI:Provides immediate insights on spelling , facilitating quick adjustments and reinforcing correct language usage.
-
-Speech analysis: Offers detailed feedback on spelling mistakes, and rhythm, helping learners refine their speaking skills and develop accurate reading patterns.
-
-Progress tracking: Allows learners to monitor their development over time, providing a clear understanding of strengths and weaknesses and facilitating focused efforts on areas needing improvement.
-
-## مسجل القراءة الذكي 💬🎥
+## مسجل القراءة الذكي || Mushajil al-Qira'ah al-Dhaki
 
 ## اقرأ ارتقِ بصوتك
 
 ## Introduction
 
-The application is a speech to text application that uses the Vosk model to transcribe the speech to text.
-Then the application compares the transcribed text with the text that the user has entered the input field.
+"Mushajil al-Qira'ah al-Dhaki" is a desktop application that allows new learners especially children to practice reading
+passages while recording their voice.
+The AI technology instantly analyzes their speech, providing detailed feedback on spelling and other aspects of spoken
+language.
+This immediate feedback loop enables learners to identify areas for improvement quickly and track their progress over
+time.
 
-The application is directed to children who are learning to read and want to improve their reading skills.
+The application provide :
+
+* Support up to 30 languages:Enables learners to practice in their native language or any language they wish to learn,
+  promoting inclusivity and engagement.
+
+* Real instant feedback by AI:Provides immediate insights on spelling , facilitating quick adjustments and reinforcing
+  correct language usage.
+
+* Speech analysis: Offers detailed feedback on spelling mistakes, and rhythm, helping learners refine their speaking
+  skills and develop accurate reading patterns.
+
+* Progress tracking: Allows learners to monitor their development over time, providing a clear understanding of
+  strengths
+  and weaknesses and facilitating focused efforts on areas needing improvement.
 
 ## Technologies Used
 
@@ -58,28 +61,21 @@ Those are the main technologies used in this project:
 
 ## Usage
 
-1. Run the server file for that you can generate text by Ai
-
-   ```
-   cd src
-   node proxy_server.js
-   ```
-
-   ```
-
-   ```
-
-2. Run the application with the following command
+1. Run the application with the following command
    ```sh
    npm run dev
    ```
+
+2. Upload the script that you want to read
+    1. Write or paste the script in the text area
+    2. You can generate a script with an AI assistant like GPT-3.
+       for that u have to run the following command
+       ```
+       cd src
+       node proxy_server.js
+       ```
 3. Click on the start button to start the process
 4. Start reading the script and the application will highlight the words that you are reading
 
-# video
-
-https://youtu.be/V6DfUA9JSEA
-
-# presentaion
-
+# Presentation
 https://docs.google.com/presentation/d/1LbK6pRwAsIzlReleLNf4ToDs0YPg3rjsLJSvmspuVEE/edit#slide=id.g2bd619d2532_0_757
