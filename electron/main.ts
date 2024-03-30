@@ -16,7 +16,6 @@ function createWindow() {
 		width: 900,
 		height: 900,
 		autoHideMenuBar: true,
-		alwaysOnTop: true, // true at the moment for testing
 		title: "hackathon-ramadan-2024",
 		icon: path.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
 		webPreferences: {
